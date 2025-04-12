@@ -1,0 +1,43 @@
+﻿@{
+	ViewData["Title"] = "App Tareas Simples";
+}
+@model IEnumerable<TareasApp.Models.Tarea>
+
+<h1>Lista de Tareas</h1>
+
+<p>
+<a asp-action="Create">añadir Nueva Tarea</a>
+</p>
+<div class="row justify-content-center">
+	<div class="col-6">
+
+<table class="table">
+	<thead>
+
+		<tr>
+			<th>@Html.DisplayNameFor(Model => Model.Titulo)</th>
+			<th>@Html.DisplayNameFor(Model => Model.Descripcion)</th>
+			<th></th>
+		</tr>
+
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@Html.DisplayFor(modelItem => item.Titulo)</td>
+				<td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+				<td></td>
+			</tr>
+			
+		}
+		</tbody>
+</table>
+	</div>
+</div>
+
+
+@* Esta vista muestra una lista de tareas. Utiliza la directiva @model para 
+	especificar el tipo de datos que espera recibir del controlador (IEnumerable<TareasApp.Models.Tarea>). 
+	El código HTML genera una tabla para mostrar el título y la descripción de cada tarea. asp-action="Create" 
+	crea un enlace a la acción Create del TareasController. *@
