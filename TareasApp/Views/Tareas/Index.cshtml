@@ -15,21 +15,25 @@
 	<thead>
 
 		<tr>
-			<th>@Html.DisplayNameFor(Model => Model.IdTarea)</th>
+			<th>Ident.</th>
 			<th>@Html.DisplayNameFor(Model => Model.Titulo)</th>
 			<th>@Html.DisplayNameFor(Model => Model.Descripcion)</th>
+			<th></th>
+			<th></th>
 			<th></th>
 		</tr>
 
 	</thead>
 	<tbody>
-		@foreach (var item in Model)
+		@foreach (var task in Model)
 		{
 			<tr>
 
-				<td>@Html.DisplayFor(modelItem => item.IdTarea)</td>
-				<td>@Html.DisplayFor(modelItem => item.Titulo)</td>
-				<td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+				<td>@Html.DisplayFor(modelItem => task.IdTarea)</td>
+				<td>@Html.DisplayFor(modelItem => task.Titulo)</td>
+				<td>@Html.DisplayFor(modelItem => task.Descripcion)</td>
+				<td><a asp-action="edit" asp-route-id="@task.IdTarea" class="btn btn-secondary">Editar</a></td>
+				<td><a asp-action="delete" asp-route-id="@task.IdTarea" class="btn btn-danger ms-3">Eliminar</a></td>
 				<td></td>
 			</tr>
 			
