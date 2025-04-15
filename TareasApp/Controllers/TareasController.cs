@@ -15,7 +15,7 @@ namespace TareasApp.Controllers
             _context = context;
         }
 
-        // GET: (read) obtiene las tareas de la DB y las pasa a View
+        // GET: INDEX obtiene las tareas de la DB y las pasa a View
         public async Task<IActionResult> Index()
         {
             var tareas = await _context.Tareas.ToListAsync();
